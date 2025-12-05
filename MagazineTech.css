@@ -1,0 +1,122 @@
+/* -------- RESET -------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* -------- NAVBAR -------- */
+.navbar {
+    width: 100%;
+    background: #0D47A1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 12px 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -------- LOGO -------- */
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* -------- RIGHT AREA -------- */
+.right-side {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* -------- LINKS -------- */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* -------- SEARCH BAR -------- */
+.nav-search {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.search-input {
+    padding: 10px 12px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    width: 170px;
+}
+
+.search-btn {
+    padding: 10px 14px;
+    background: #1565C0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.search-btn:hover {
+    background: #1E88E5;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 850px) {
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .right-side {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-search {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-input {
+        width: 75%;
+    }
+}

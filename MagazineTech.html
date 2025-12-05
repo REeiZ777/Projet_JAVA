@@ -1,37 +1,272 @@
 <!DOCTYPE html>
 <html lang="fr">
+<!-- Section mise à jour par christ lobognon -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigitalPlus</title>
+    <title>DigitalPulse - Le Blog Tech</title>
     <link rel="stylesheet" href="MagazineTech.css">
+    <style>
+        .view-section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--electric-blue);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- NAVBAR COMPLETE -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <header class="page-header">
+        <h1>DigitalPulse</h1>
+        <p>L'actualité technologique au bout des doigts</p>
+    </header>
 
-            <!-- LOGO -->
-            <div class="logo">DigitalPlus</div>
+    <!-- Main Grid View -->
+    <main id="home-view" class="view-section active">
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="IA" class="card-image">
+                <div class="card-content">
+                    <span class="card-category">Intelligence Artificielle</span>
+                    <h2 class="card-title">L'IA : Révolution ou Danger ?</h2>
+                    <p class="card-excerpt">Une analyse approfondie sur l'impact de l'intelligence artificielle dans
+                        notre
+                        quotidien et les défis éthiques qu'elle soulève.</p>
+                    <a href="#" onclick="showView('article-ia'); return false;" class="read-more">Lire la suite →</a>
+                </div>
+            </article>
 
-            <!-- MENU + BARRE DE RECHERCHE -->
-            <div class="right-side">
+            <!-- Article 2 -->
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Cybersécurité" class="card-image">
+                <div class="card-content">
+                    <span class="card-category">Cybersécurité</span>
+                    <h2 class="card-title">Protéger vos données en 2025</h2>
+                    <p class="card-excerpt">Les meilleures pratiques pour sécuriser votre vie numérique face aux
+                        nouvelles
+                        menaces et aux attaques sophistiquées.</p>
+                    <a href="#" onclick="showView('article-security'); return false;" class="read-more">Lire la suite
+                        →</a>
+                </div>
+            </article>
 
-                <ul class="nav-links">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">Catégories</a></li>
+            <!-- Article 3 -->
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="VR" class="card-image">
+                <div class="card-content">
+                    <span class="card-category">Réalité Virtuelle</span>
+                    <h2 class="card-title">Le Métavers : Où en est-on ?</h2>
+                    <p class="card-excerpt">Retour sur les promesses du monde virtuel et les dernières innovations qui
+                        pourraient enfin le rendre indispensable.</p>
+                    <a href="#" class="read-more">Lire la suite →</a>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Code" class="card-image">
+                <div class="card-content">
+                    <span class="card-category">Développement</span>
+                    <h2 class="card-title">WebAssembly : Le futur du Web ?</h2>
+                    <p class="card-excerpt">Pourquoi cette technologie pourrait bien remplacer le JavaScript pour les
+                        applications web performantes.</p>
+                    <a href="#" class="read-more">Lire la suite →</a>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Hardware" class="card-image">
+                <div class="card-content">
+                    <span class="card-category">Hardware</span>
+                    <h2 class="card-title">La fin de la loi de Moore</h2>
+                    <p class="card-excerpt">Les limites physiques des processeurs sont-elles atteintes ? Quelles sont
+                        les
+                        alternatives pour continuer à gagner en puissance ?</p>
+                    <a href="#" class="read-more">Lire la suite →</a>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1531297461136-82lw9z291765?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="5G" class="card-image">
+                <div class="card-content">
+                    <span class="card-category">Réseaux</span>
+                    <h2 class="card-title">La 6G arrive déjà</h2>
+                    <p class="card-excerpt">Alors que la 5G se déploie encore, les chercheurs travaillent déjà sur la
+                        prochaine génération de réseaux mobiles ultra-rapides.</p>
+                    <a href="#" class="read-more">Lire la suite →</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Article IA View -->
+    <section id="article-ia" class="view-section">
+        <article class="article-container">
+            <a href="#" onclick="showView('home-view'); return false;" class="nav-back">← Retour à l'accueil</a>
+            <header>
+                <div class="meta-info">
+                    <span>Publié le 5 Décembre 2025</span> | <span>Par Christ Emmanuel</span>
+                </div>
+                <h1>L'Intelligence Artificielle : Révolution ou Danger ?</h1>
+                <p class="intro">Une plongée au cœur de la technologie qui redéfinit notre futur.</p>
+            </header>
+
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Intelligence Artificielle Concept" class="featured-image">
+
+            <div class="article-content">
+                <p>L'intelligence artificielle (IA) est sans doute l'une des avancées technologiques les plus marquantes
+                    de
+                    notre siècle. De la reconnaissance vocale sur nos smartphones aux voitures autonomes, elle
+                    s'infiltre
+                    progressivement dans tous les aspects de notre quotidien.</p>
+
+                <h2>Qu'est-ce que l'IA aujourd'hui ?</h2>
+                <p>Loin des robots tueurs de la science-fiction, l'IA actuelle est principalement constituée
+                    d'algorithmes
+                    d'apprentissage automatique (Machine Learning) capables d'analyser de vastes quantités de données
+                    pour
+                    en tirer des prédictions ou prendre des décisions.</p>
+
+                <blockquote>
+                    "L'IA ne va pas remplacer les humains, mais les humains qui utilisent l'IA remplaceront ceux qui ne
+                    le
+                    font pas."
+                </blockquote>
+
+                <h2>Les opportunités</h2>
+                <p>Les applications bénéfiques sont nombreuses :</p>
+                <ul>
+                    <li><strong>Santé :</strong> Détection précoce de maladies grâce à l'analyse d'imagerie médicale.
+                    </li>
+                    <li><strong>Environnement :</strong> Optimisation de la consommation énergétique des bâtiments.</li>
+                    <li><strong>Productivité :</strong> Automatisation des tâches répétitives.</li>
                 </ul>
 
-                <div class="nav-search">
-                    <input type="text" placeholder="Rechercher..." class="search-input">
-                    <button class="search-btn">🔍</button>
-                </div>
+                <h2>Les défis éthiques</h2>
+                <p>Cependant, cette révolution ne vient pas sans risques. La question de la confidentialité des données,
+                    les
+                    biais algorithmiques et l'impact sur l'emploi sont des sujets brûlants qui nécessitent une
+                    régulation
+                    attentive.</p>
 
+                <h2>Conclusion</h2>
+                <p>L'avenir de l'IA dépendra de la manière dont nous choisissons de la développer et de l'encadrer.
+                    C'est un
+                    outil puissant qui, bien utilisé, a le potentiel d'améliorer considérablement la condition humaine.
+                </p>
             </div>
-        </div>
-    </nav>
+            <a href="#" onclick="showView('home-view'); return false;" class="nav-back">← Retour à l'accueil</a>
+        </article>
+    </section>
 
+    <!-- Article Cybersecurite View -->
+    <section id="article-security" class="view-section">
+        <article class="article-container">
+            <a href="#" onclick="showView('home-view'); return false;" class="nav-back">← Retour à l'accueil</a>
+            <header>
+                <div class="meta-info">
+                    <span>Publié le 6 Décembre 2025</span> | <span>Par Sarah Connor</span>
+                </div>
+                <h1>Protéger vos données en 2025</h1>
+                <p class="intro">Les meilleures pratiques pour sécuriser votre vie numérique face aux nouvelles menaces.
+                </p>
+            </header>
+
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Cybersécurité Concept" class="featured-image">
+
+            <div class="article-content">
+                <p>À l'ère du tout numérique, nos données personnelles sont devenues une monnaie d'échange précieuse.
+                    Avec
+                    l'augmentation des cyberattaques, il est crucial d'adopter des habitudes de sécurité robustes.</p>
+
+                <h2>Les nouvelles menaces</h2>
+                <p>Les pirates informatiques utilisent des techniques de plus en plus sophistiquées, notamment
+                    l'ingénierie
+                    sociale assistée par IA et les ransomwares ciblés. Personne n'est à l'abri, des particuliers aux
+                    grandes
+                    entreprises.</p>
+
+                <blockquote>
+                    "La sécurité n'est pas un produit, mais un processus." - Bruce Schneier
+                </blockquote>
+
+                <h2>Bonnes pratiques essentielles</h2>
+                <p>Voici quelques mesures simples mais efficaces pour renforcer votre sécurité :</p>
+                <ul>
+                    <li><strong>Mots de passe forts :</strong> Utilisez des gestionnaires de mots de passe et activez
+                        l'authentification à deux facteurs (2FA) partout où c'est possible.</li>
+                    <li><strong>Mises à jour :</strong> Gardez vos systèmes d'exploitation et logiciels à jour pour
+                        corriger
+                        les failles de sécurité.</li>
+                    <li><strong>Vigilance :</strong> Méfiez-vous des emails suspects et ne cliquez pas sur des liens
+                        inconnus (Phishing).</li>
+                </ul>
+
+                <h2>L'importance de la sauvegarde</h2>
+                <p>En cas d'attaque par ransomware, la seule façon de récupérer vos données sans payer est d'avoir une
+                    sauvegarde récente et isolée. N'attendez pas qu'il soit trop tard.</p>
+
+                <h2>Conclusion</h2>
+                <p>La cybersécurité est l'affaire de tous. En adoptant une posture proactive et en restant informé, vous
+                    pouvez naviguer sur internet avec plus de sérénité.</p>
+            </div>
+            <a href="#" onclick="showView('home-view'); return false;" class="nav-back">← Retour à l'accueil</a>
+        </article>
+    </section>
+
+    <script>
+        function showView(viewId) {
+            // Hide all sections
+            document.querySelectorAll('.view-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show the requested section
+            document.getElementById(viewId).classList.add('active');
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
+
 </html>
